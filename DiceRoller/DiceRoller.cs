@@ -12,7 +12,7 @@ public class DiceRoller
     public int MaxDieValue { get; set; }
     public int NumberOfRolls { get; set; }
 
-    private readonly static Random RNG = new Random();
+    internal readonly static Random RNG = new Random();
     
     public DiceRoller(int maxDieValue = 0, int numberOfRolls = 0) 
     {
@@ -30,7 +30,16 @@ public class DiceRoller
         return roll;
     }
 
+}
 
+public class CrapsRoller : DiceRoller
+{
+    public CrapsRoller()
+    {
+        MaxDieValue = 6;
+        NumberOfRolls = 2;
+    }
 
 }
+
 
